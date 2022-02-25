@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Hammad/SocialMediaDownloader/app/src/main/res/drawable-v24/grey_background_middle.xml" value="0.24722222222222223" />
+        <entry key="..\:/Hammad/SocialMediaDownloader/app/src/main/res/drawable-v24/white_background.xml" value="0.24722222222222223" />
+        <entry key="..\:/Hammad/SocialMediaDownloader/app/src/main/res/drawable-v24/white_circular_border_middle.xml" value="0.24722222222222223" />
+        <entry key="..\:/Hammad/SocialMediaDownloader/app/src/main/res/drawable/background_gradient.xml" value="0.25277777777777777" />
+        <entry key="..\:/Hammad/SocialMediaDownloader/app/src/main/res/drawable/circular_border.xml" value="0.25277777777777777" />
+        <entry key="..\:/Hammad/SocialMediaDownloader/app/src/main/res/drawable/custom_left_circular_border.xml" value="0.25277777777777777" />
+        <entry key="..\:/Hammad/SocialMediaDownloader/app/src/main/res/drawable/custom_white_background.xml" value="0.25277777777777777" />
+        <entry key="..\:/Hammad/SocialMediaDownloader/app/src/main/res/drawable/grey_background.xml" value="0.24722222222222223" />
+        <entry key="..\:/Hammad/SocialMediaDownloader/app/src/main/res/drawable/grey_circular_border.xml" value="0.25277777777777777" />
+        <entry key="..\:/Hammad/SocialMediaDownloader/app/src/main/res/drawable/ic_save.xml" value="0.25277777777777777" />
+        <entry key="..\:/Hammad/SocialMediaDownloader/app/src/main/res/drawable/left_circular_border.xml" value="0.25277777777777777" />
+        <entry key="..\:/Hammad/SocialMediaDownloader/app/src/main/res/drawable/white_background.xml" value="0.25277777777777777" />
+        <entry key="..\:/Hammad/SocialMediaDownloader/app/src/main/res/drawable/white_circular_border.xml" value="0.25277777777777777" />
+        <entry key="..\:/Hammad/SocialMediaDownloader/app/src/main/res/layout/activity_main.xml" value="0.22" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
