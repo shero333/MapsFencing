@@ -1,10 +1,5 @@
 package com.hammad.facebookvideodownloader;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-
 import android.Manifest;
 import android.app.Activity;
 import android.content.ClipData;
@@ -14,10 +9,16 @@ import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -26,10 +27,10 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class MainActivity extends AppCompatActivity {
+public class FacebookActivity extends AppCompatActivity {
 
     EditText editTextLink;
-    Button buttonDownload, buttonPasteLink;
+    AppCompatButton buttonDownload, buttonPasteLink;
 
     Activity activity;
 
@@ -38,13 +39,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //hide action bar
+        getSupportActionBar().hide();
+
+        //hide status bar
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         editTextLink = findViewById(R.id.edt_txt_link);
 
         //initializing activity instance
         activity = this;
 
         buttonDownload = findViewById(R.id.btn_download);
-        buttonPasteLink = findViewById(R.id.btn_paste_link);
+        buttonPasteLink = findViewById(R.id.btn_paste);
 
         buttonPasteLink.setOnClickListener(view -> {
             if (pasteLink() != null) {
@@ -58,14 +65,14 @@ public class MainActivity extends AppCompatActivity {
 
         buttonDownload.setOnClickListener(v -> checkPermission());
 
-        if(pasteLink() != null)
+         /*if(pasteLink() != null)
         {
             editTextLink.setText(pasteLink());
         }
         else if(pasteLink() == null)
         {
             Toast.makeText(activity, "NUll ", Toast.LENGTH_SHORT).show();
-        }
+        }*/
     }
 
 
@@ -110,16 +117,13 @@ public class MainActivity extends AppCompatActivity {
             String host = url.getHost();
 
             if (host.contains("fb.watch")) {
-                new FacebookDownloadAsyncTask().execute(editTextLink.getText().toString());
+                new FacebookDownloadAsyncTask().execute(editTextLink.getText().toString().trim());
             } else {
                 Toast.makeText(activity, "Please paste Facebook video link", Toast.LENGTH_SHORT).show();
-                editTextLink.setText("");
             }
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
-
-
     }
 
     private void hideSoftInputKeyboard(View view) {
@@ -147,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
                     .last().attr("content");
 
             if (videoUrl != null) {
-                Util.downloadFacebookVideo(videoUrl, Util.ROOT_DIRECTORY_FACEBOOK, activity,
+                FacebookUtil.downloadFacebookVideo(videoUrl, FacebookUtil.ROOT_DIRECTORY_FACEBOOK, FacebookActivity.this,
                         "facebook_" + System.currentTimeMillis() + ".mp4");
             }
         }

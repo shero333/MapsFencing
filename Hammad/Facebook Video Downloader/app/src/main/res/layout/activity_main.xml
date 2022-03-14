@@ -1,45 +1,71 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="30dp"
-    android:padding="20dp"
-    tools:context=".MainActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#f2f5f8"
+    tools:context=".FacebookActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_main"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_180sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/background_gradient">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <EditText
         android:id="@+id/edt_txt_link"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:drawableStart="@drawable/ic_link"
-        android:drawablePadding="15dp"
-        android:padding="10dp"
+        android:padding="@dimen/_10sdp"
+        app:layout_constraintWidth_percent="0.7"
+        android:background="@drawable/background_edit_text"
+        android:layout_marginTop="@dimen/_60sdp"
+        app:layout_constraintVertical_bias="0.2"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:hint="Paste Link"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
-
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_download"
-        android:layout_width="150dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:layout_constraintWidth_percent="0.3"
         android:text="Download"
+        android:background="@drawable/button_gradient"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
         android:textAlignment="center"/>
 
-    <Button
-        android:id="@+id/btn_paste_link"
-        android:layout_width="150dp"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_paste"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Paste Link"
-        android:textAlignment="center"/>
+        app:layout_constraintWidth_percent="0.3"
+        android:background="@drawable/button_gradient"
+        android:text="Paste"
+        android:textAllCaps="false"
+        android:textAlignment="center"
+        android:textColor="@color/white"/>
 
     <androidx.constraintlayout.helper.widget.Flow
         android:id="@+id/flow"
-        android:layout_marginTop="10dp"
-        android:padding="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:constraint_referenced_ids="btn_download,btn_paste_link"
-        app:layout_constraintTop_toBottomOf="@id/edt_txt_link" />
+        android:layout_marginTop="@dimen/_30sdp"
+        app:constraint_referenced_ids="btn_download,btn_paste"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edt_txt_link"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
