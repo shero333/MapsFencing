@@ -9,7 +9,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class OtherOperationViewModel @Inject constructor(application: Application, private val repositoryTodo : RepositoryTodo) : AndroidViewModel(application) {
+class OtherOperationViewModel @Inject constructor(application: Application, private val repositoryTodo : RepositoryTodo) : ViewModel() {
 
     private var listTodoLivedata : MutableLiveData<List<Todo?>?> = MutableLiveData()
     fun getList() : MutableLiveData<List<Todo?>?> {

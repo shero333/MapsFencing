@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.view.Window
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatEditText
+import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.taskday1application.R
@@ -80,7 +81,7 @@ open class todoListViewAdapter(
         val name : AppCompatTextView = itemView.findViewById(R.id.name)
         val date : AppCompatTextView = itemView.findViewById(R.id.date)
         val priority : AppCompatTextView = itemView.findViewById(R.id.priority)
-        val edit : AppCompatButton = itemView.findViewById(R.id.edit_button)
+        val edit : AppCompatImageView = itemView.findViewById(R.id.edit_button)
     }
 
     interface UpdateTodo{

@@ -10,22 +10,26 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
+import com.example.taskday1application.R
 import com.example.taskday1application.databinding.FragmentAddTodoBinding
 import com.example.taskday1application.main.models.Todo
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import java.time.LocalDate
 
+@AndroidEntryPoint
 class addTodoFragment : Fragment() {
+
     private var binding: FragmentAddTodoBinding? = null
+    private val addTodoViewModel by viewModels<AddTodoViewModel>()
+
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
-
-        val addTodoViewModel = ViewModelProvider(this)[AddTodoViewModel::class.java]
 
         binding = FragmentAddTodoBinding.inflate(inflater, container, false)
 
@@ -67,9 +71,12 @@ class addTodoFragment : Fragment() {
                     val snackbarView = snackbar.view
                     snackbarView.setBackgroundColor(Color.LTGRAY)
                     val textView = snackbarView.findViewById(com.google.android.material.R.id.snackbar_text) as TextView
-                    textView.setTextColor(Color.BLUE)
+                    textView.setTextColor(resources.getColor(R.color.icon_splash_background))
                     textView.textSize = 28f
                     snackbar.show()
+
+                    binding!!.addTodoForm.addTodoForm.visibility = View.GONE
+
                 }else{
 
                     Log.d("addTodoException", "onCreateView: "+addTodoViewModel.exception)
@@ -84,7 +91,6 @@ class addTodoFragment : Fragment() {
                     textView.textSize = 28f
                     snackbar.show()
                 }
-
             }
         }
 

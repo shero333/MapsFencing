@@ -50,8 +50,6 @@ abstract class TodoDatabase : RoomDatabase() {
                 // are creating a new instance
                 instance = databaseBuilder(context.applicationContext, TodoDatabase::class.java, "todo_database")
                     .allowMainThreadQueries()
-                    .fallbackToDestructiveMigration()
-                    .addCallback(roomCallback)
                     .build()
             }
 

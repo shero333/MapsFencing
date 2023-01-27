@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.view.Window
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatEditText
+import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.taskday1application.R
@@ -88,8 +89,8 @@ class OtherOperationsListAdapter(
         val date : AppCompatTextView = itemView.findViewById(R.id.date_other)
         val priority : AppCompatTextView = itemView.findViewById(R.id.priority_other)
 
-        val edit : AppCompatButton = itemView.findViewById(R.id.edit_button_other)
-        val delete : AppCompatButton = itemView.findViewById(R.id.delete_button_other)
+        val edit : AppCompatImageView = itemView.findViewById(R.id.edit_button_other)
+        val delete : AppCompatImageView = itemView.findViewById(R.id.delete_button_other)
     }
 
     interface UpdateTodoOther{

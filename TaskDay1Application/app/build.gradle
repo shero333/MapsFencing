@@ -2,9 +2,7 @@ plugins {
     id 'com.android.application'
     id 'dagger.hilt.android.plugin'
     id 'org.jetbrains.kotlin.android'
-    id 'kotlin-android'
     id 'kotlin-kapt'
-    id 'kotlin-android-extensions'
 }
 
 android {
@@ -53,15 +51,13 @@ dependencies {
 
     implementation 'androidx.core:core-splashscreen:1.0.0'
 
-    implementation 'androidx.room:room-runtime:2.5.0'
-
-    annotationProcessor 'androidx.room:room-compiler:2.5.0'
+    implementation "androidx.room:room-ktx:2.5.0"
+    kapt "androidx.room:room-compiler:2.5.0"
 
 //    //Hilt dependencies
-    annotationProcessor 'com.google.dagger:hilt-android-compiler:2.40.5'
-    annotationProcessor 'com.google.dagger:hilt-compiler:2.40.5'
-    implementation 'com.stripe:stripe-android:18.2.0'
-    implementation 'com.google.dagger:hilt-android:2.40.5'
+    implementation 'com.google.dagger:hilt-android:2.44.2'
+    implementation 'androidx.hilt:hilt-common:1.0.0'
+    kapt 'com.google.dagger:hilt-compiler:2.44.2'
 
     //Coroutines Dependencies
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1'
@@ -70,6 +66,4 @@ dependencies {
     //Coroutines Lifecycle Dependencies
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.1'
-//    implementation "androidx.room:room-coroutines:2.5.1"
-//    implementation 'com.android.support:multidex:1.0.3'
 }
